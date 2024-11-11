@@ -26,6 +26,41 @@ fn help_message() {
     println!("{}", help);
 }
 
+struct Settings {
+    focus_time: u32,
+    break_time: u32,
+    break_long_time: u32,
+    cycle: u32,
+    pause: bool,
+    resume: bool,
+    stop: bool,
+    skip: bool,
+    attach: bool,
+    verbose: bool,
+    help: bool
+}
+
+impl Default for Settings {
+    fn default() -> Self {
+        Settings {
+            focus_time: 25,
+            break_time: 5,
+            break_long_time: 15,
+            cycle: 4,
+            pause: false,
+            resume: false,
+            stop: false,
+            skip: false,
+            attach: false,
+            verbose: false,
+            help: false
+        }
+    }
+}
+
+fn parse_args(args: Vec<OsString>) -> Settings {
+    // TODO: parse args
+}
+
 fn main() {
-    // TODO: Parse command line arguments
 }
